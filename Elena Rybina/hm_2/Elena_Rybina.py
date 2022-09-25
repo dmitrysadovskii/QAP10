@@ -1,1 +1,1 @@
-print("I have a great teacher Dmitry!")
+print("Hi!")
