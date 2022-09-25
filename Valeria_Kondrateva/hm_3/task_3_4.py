@@ -1,2 +1,2 @@
-str = " python "
-print (str[1:7])
+string = " python "
+print(string[1:7])
