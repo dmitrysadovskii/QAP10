@@ -1,5 +1,5 @@
-end = 'ing'
-var = 'work' + end
-var2 = 'cry' + end
-var3 = 'dream' + end
-print(var, var2, var3)
+str1 = 'dream work cry'
+words = str1.split()
+for i in words:
+    str2 = i.join(('', 'ing'))
+    print(str2)
