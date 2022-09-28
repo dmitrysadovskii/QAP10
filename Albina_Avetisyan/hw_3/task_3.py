@@ -15,5 +15,3 @@ print(' '.join(r))
 print('zadanie 4 =)')
 expression = ' ' + expression + '  '
 print(expression.strip())
-
-
