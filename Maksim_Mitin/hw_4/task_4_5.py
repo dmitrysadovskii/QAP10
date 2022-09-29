@@ -15,3 +15,8 @@ for k, v in a.items():
         ab[k] = [v, None]
 
 print(ab)
+
+#d = {}      - ещё вот такой более продвинутый способ попробовал сделать, вроде работает так как надо
+#for elem in list(a.keys()) + list(b.keys()):
+#    d[elem] = ([a.get(elem, ), b.get(elem, )])
+#print(d)

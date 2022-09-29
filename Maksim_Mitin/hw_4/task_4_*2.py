@@ -33,17 +33,17 @@ characters = [
 def findCharacters(some_string):
     some_string.lower()
     text = some_string.replace(" ", "")
-    d = {}
+    dict = {}
     for t in text:
         if t in characters:
-            d[t] = text.count(t)
-    m = max(d.values())
+            dict[t] = text.count(t)
+    m = max(dict.values())
     cont = m
-    l = []
-    for key in d:
-        if d[key] == cont:
-            l.append(key)
-    print(l)
+    array = []
+    for key in dict:
+        if dict[key] == cont:
+            array.append(key)
+    print(array)
 
 
 findCharacters(string)
