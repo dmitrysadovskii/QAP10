@@ -16,7 +16,7 @@ for k, v in a.items():
 
 print(ab)
 
-#d = {}      - ещё вот такой более продвинутый способ попробовал сделать, вроде работает так как надо
-#for elem in list(a.keys()) + list(b.keys()):
+#  d = {}      - ещё вот такой более продвинутый способ попробовал сделать, вроде работает так как надо
+# for elem in list(a.keys()) + list(b.keys()):
 #    d[elem] = ([a.get(elem, ), b.get(elem, )])
-#print(d)
+# print(d)
