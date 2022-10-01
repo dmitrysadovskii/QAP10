@@ -3,4 +3,3 @@ a = s.split()
 print(a)
 b = ' '.join(a)
 print(b)
-
