@@ -1,6 +1,6 @@
 from collections import Counter
 
-text = 'a' * 9000 + 'b' * 9000 + ',' * 500 + '   ' * 20 + '1'* 20 + 'n' * 9000
+text = 'a' * 9000 + 'b' * 9000 + ',' * 500 + '   ' * 20 + '1' * 20 + 'n' * 9000
 text_to_list = list()
 
 for i in text.lower():
