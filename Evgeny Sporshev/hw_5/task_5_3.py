@@ -12,7 +12,7 @@ while True:
         if suggested_number[i] == secret_number[i]:
             bull_counter += 1
         elif suggested_number[i] in secret_number:
-            cow_counter +=1
+            cow_counter += 1
         else:
             continue
     print('Коров:', cow_counter, 'Быков:', bull_counter)
