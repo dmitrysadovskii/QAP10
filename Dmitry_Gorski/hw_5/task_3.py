@@ -1,18 +1,17 @@
-secret_number = '3219'
-
 while True:
-    user_number = input('Введите 4-х значное число (цифры не должны повторяться): ')
-    d = {'Бык(и)': 0, 'Корова(ы)': 0}
-    if user_number.isdigit() and len(list(set(user_number))) == 4:
+    user_number, secret_number, d = input('Input 4-digit number (numbers must not be repeated): '),\
+                                    '3219',\
+                                    {'Cows': 0, 'Bulls': 0}
+    try:
+        assert user_number.isdigit() and len(list(set(user_number))) == 4, print('Attention!!!\n')
         for i in list(user_number):
             if i in list(secret_number):
-                d['Корова(ы)'] = int(d.get('Корова(ы)')) + 1
+                d['Cows'] = int(d.get('Cows')) + 1
                 if list(user_number).index(i) == list(secret_number).index(i):
-                    d['Бык(и)'] = int(d.get('Бык(и)')) + 1
-                    if int(d.get('Бык(и)')) == 4:
-                        print('Вы выиграли !!!')
+                    d['Bulls'] = int(d.get('Bulls')) + 1
+                    if int(d.get('Bulls')) == 4:
+                        print('You win!!!')
                         exit(0)
-        print(f'Увы, но пока Быков -- {d.get("Бык(и)")}, а Коров -- {d.get("Корова(ы)")}\n')
-    else:
-        print('Обратите внимание на условие ввода!!!\n')
+        print(f'Bulls -- {d.get("Bulls")}, Cows -- {d.get("Cows")}\n')
+    except AssertionError:
         continue
