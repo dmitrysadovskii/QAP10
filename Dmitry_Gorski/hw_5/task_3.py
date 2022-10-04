@@ -1,7 +1,6 @@
 while True:
-    user_number, secret_number, d = input('Input 4-digit number (numbers must not be repeated): '),\
-                                    '3219',\
-                                    {'Cows': 0, 'Bulls': 0}
+    user_number = input('Input 4-digit number (numbers must not be repeated): ')
+    secret_number, d = '3219', {'Cows': 0, 'Bulls': 0}
     try:
         assert user_number.isdigit() and len(list(set(user_number))) == 4, print('Attention!!!\n')
         for i in list(user_number):
