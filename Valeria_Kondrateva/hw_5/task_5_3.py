@@ -6,25 +6,28 @@ while True:
     bull = 0
 
     number = input('Введите 4-значное число ')
+    if len(number) != 4:
+        print('Неверное число. Введите 4-значное число')
 
-    b = [int(x) for x in str(number)]
+    else:12
+        b = [int(x) for x in str(number)]
 
-    for i in range(len(a)):
-        if a[i] in b:
-            cow += 1
+        for i in range(len(a)):
+            if a[i] in b:
+                cow += 1
 
-        if a[i] == b[i]:
-            bull += 1
+            if a[i] == b[i]:
+                bull += 1
 
-    cow -= bull
+        cow -= bull
 
-    if bull == 4:
-        break
-    else:
-        dct_cow = {0: 'Коров нет', 1: 'Одна корова', 2: 'Двe коровы', 3: 'Три коровы', 4: 'Четыре коровы'}
-        dct_bull = {0: 'Быков нет', 1: 'Один бык', 2: 'Два быка', 3: 'Три быка'}
+        if bull == 4:
+            break
+        else:
+            dct_cow = {0: 'Коров нет', 1: 'Одна корова', 2: 'Двe коровы', 3: 'Три коровы', 4: 'Четыре коровы'}
+            dct_bull = {0: 'Быков нет', 1: 'Один бык', 2: 'Два быка', 3: 'Три быка'}
 
-        print(f"{dct_cow[cow]}, {dct_bull[bull]}.\n")
+            print(f"{dct_cow[cow]}, {dct_bull[bull]}.\n")
 
 
 print("Вы выиграли!")
