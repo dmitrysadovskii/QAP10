@@ -9,5 +9,3 @@ def likes(*args):
         print(f"{str(args[0])},{str(args[1])} and {str(args[2])} likes this")
     else:
         print(f"{str(args[0])},{str(args[1])} and {len(args[2:])} others like this")
-
-
