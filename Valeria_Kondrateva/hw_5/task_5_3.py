@@ -9,7 +9,7 @@ while True:
     if len(number) != 4:
         print('Неверное число. Введите 4-значное число')
 
-    else:12
+    else:
         b = [int(x) for x in str(number)]
 
         for i in range(len(a)):
