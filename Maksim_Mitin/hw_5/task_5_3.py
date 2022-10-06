@@ -1,15 +1,13 @@
 import random
+# делал через генерацию рандомных чисел, по идее можно через инпут запрашивать число и его аргументом в функцию
+# (но там надо проверки делать на кратность4 и без симвлов и букв,я подумал надо сделать просто)
 
-def cows_and_bulls(digits):
-    listnumbers = [random.randint(0, 9) for n in range(digits)]
-    count = 0
+
+def cows_and_bulls():
+    listnumbers = [random.randint(0, 9) for n in range(4)]
 
     while True:
-        count += 1
-        print(f"Попытка № {str(count)}" )
-        print(f"Подсказка для теста {str(listnumbers)}")
-
-        print(f"Угадай  {str(digits)} значное число")
+        print(f"Загадано число {str(listnumbers)}")
         guess = [int(i) for i in str(input())]
 
         if guess == listnumbers:
@@ -19,12 +17,12 @@ def cows_and_bulls(digits):
             cow = 0
             bull = 0
 
-            for x in range(0, digits):
-                if guess[x]==listnumbers[x]:
+            for x in range(0, 3):
+                if guess[x] == listnumbers[x]:
                     cow += 1
                 elif guess[x] in listnumbers:
                     bull += 1
-
         print(f"Коров = {str(cow)}. Быков = {str(bull)}")
 
-cows_and_bulls(4)
+
+cows_and_bulls()
