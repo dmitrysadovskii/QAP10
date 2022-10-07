@@ -1,22 +1,33 @@
 import random
 
-hidden_num = input("number: ")
 
-digits = set()
-for _ in range(10):
-    digits.add(random.randint(1, 9))
-    if len(digits) == 4:
-        break
+def insert_num():
+    while True:
+        num = input("number: ")
+        set_hidden_num = set(map(int, num))
+        if len(set_hidden_num) == 4:
+            break
+    return set_hidden_num
 
-number = int("".join(map(str, list(digits))))
 
-list_of_hid_num = list(map(int, str(hidden_num)))
-list_of_ran_num = list(digits)
-print(number)
-for i in list_of_hid_num:
-    for l in list_of_ran_num:
+def get_random_num():
+    set_random_num = set()
+    for _ in range(10):
+        set_random_num.add(random.randint(1, 9))
+        if len(set_random_num) == 4:
+            break
+    return set_random_num
+
+
+list_hid_num = list(insert_num())
+list_ran_num = list(get_random_num())
+print(list_hid_num)
+print(list_ran_num)
+
+for i in list_hid_num:
+    for l in list_ran_num:
         if i == l:
-            if list_of_hid_num.index(i) == list_of_ran_num.index(l):
+            if list_hid_num.index(i) == list_ran_num.index(l):
                 print(i, "бык")
             else:
                 print(i, "корова")
