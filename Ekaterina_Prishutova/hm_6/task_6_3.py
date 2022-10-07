@@ -1,0 +1,39 @@
+def is_number(str_1):
+    try:
+        float(str_1)
+        return True
+    except ValueError:
+        return False
+
+
+def calc(val_1, val_2, oper):
+    if oper == "1":
+        return val_1 + val_2
+    elif oper == "2":
+        return val_1 - val_2
+    elif oper == "3":
+        return val_1 * val_2
+    elif oper == "4":
+        return int(val_1 / val_2), int(val_1 % val_2)
+
+
+while True:
+    operation = input("Выберите операцию:\n1. Сложение\n2. Вычитание\n3. Умножение\n4. Деление\n")
+    if not operation.isdigit() or "1, 2, 3, 4".find(operation) < 0:
+        print("Выбрана некорректная операция")
+        break
+    else:
+        a = input("Введите первое число\n")
+        b = input("Введите второе число\n")
+        if not is_number(a) or not is_number(b):
+            print("Введены некорретные числа")
+            continue
+        else:
+            if operation == "4":
+                if float(b) == 0:
+                    print("На 0 делить нельзя")
+                    break
+                ch, o = calc(float(a), float(b), operation)
+                print(f"Результат деления: частное - {ch}, остаток - {o}")
+            else:
+                print(f"Результат операции: {calc(float(a), float(b), operation)}")
