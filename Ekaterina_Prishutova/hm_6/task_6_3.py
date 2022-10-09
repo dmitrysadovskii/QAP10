@@ -14,6 +14,9 @@ def calc(val_1, val_2, oper):
     elif oper == "3":
         return val_1 * val_2
     elif oper == "4":
+        if float(val_2) == 0:
+            print("На 0 делить нельзя")
+            return
         return int(val_1 / val_2), int(val_1 % val_2)
 
 
@@ -30,10 +33,8 @@ while True:
             continue
         else:
             if operation == "4":
-                if float(b) == 0:
-                    print("На 0 делить нельзя")
-                    break
-                ch, o = calc(float(a), float(b), operation)
-                print(f"Результат деления: частное - {ch}, остаток - {o}")
+                ch = calc(float(a), float(b), operation)
+                if ch is not None:
+                    print(f"Результат деления: частное - {ch[0]}, остаток - {ch[1]}")
             else:
                 print(f"Результат операции: {calc(float(a), float(b), operation)}")
