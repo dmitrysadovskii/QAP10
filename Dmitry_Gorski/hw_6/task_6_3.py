@@ -33,15 +33,13 @@ if __name__ == "__main__":
                        'Введите номер пункта меню >>> ')
 
         assert choice.isdigit() and \
-               choice in ('1', '2', '3', '4'), print('Неверный ввод')
+               choice in ('1', '2', '3', '4'), 'Неверный ввод'
 
         f = input('Введите первое число >>> ')
-        assert f.isdigit() or \
-               int(f), print('Неверный ввод')
+        assert f.isdigit() or int(f), 'Неверный ввод'
 
         s = input('Введите второе число >>> ')
-        assert s.isdigit() or\
-               int(s), print('Неверный ввод')
+        assert s.isdigit() or int(s), 'Неверный ввод'
 
         match choice:
             case '1':
