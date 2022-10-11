@@ -29,8 +29,8 @@ def caesar(input_string, num, language):
 
 def kati_encode(input_string, mode, language):
     if language == "en":
-        abc = "".join([chr(letter) for letter in range(ord("a"), ord("z") + 1)] +
-                      [chr(letter) for letter in range(ord("A"), ord("Z") + 1)])
+        abc = "".join([chr(letter) for letter in range(ord("a"), ord("z") + 1)]
+                      + [chr(letter) for letter in range(ord("A"), ord("Z") + 1)])
     elif language == "ru":
         abc = "".join([chr(letter) for letter in range(ord("а"), ord("е") + 1)]) + chr(ord("ё")) + \
               "".join([chr(letter) for letter in range(ord("ж"), ord("я") + 1)]) + \
