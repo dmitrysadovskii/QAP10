@@ -54,7 +54,7 @@ def kati_encode(input_string, mode, language):
         return
 
 
-in_str_en = "th!is IS a teSt stri()ng"
+in_str_en = "th!is IS a teSt ]6stri()ng"
 in_str_ru = "Ехал Гpека чеpез pеку, видит Гpека – в pеке pак. Сунул Гpека pуку в pеку, pак за pуку Гpеку цап!"
 
 print("Caesar en")
