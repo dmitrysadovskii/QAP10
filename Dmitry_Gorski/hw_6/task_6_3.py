@@ -24,32 +24,29 @@ def convert(a, b: str) -> tuple:
 
 if __name__ == "__main__":
 
-    try:
-        choice = input('Выбирите операцию:\n'
-                       '1.Сложение\n'
-                       '2.Вычитание\n'
-                       '3.Умножение\n'
-                       '4.Деление\n'
-                       'Введите номер пункта меню >>> ')
+    choice = input('Выбирите операцию:\n'
+                   '1.Сложение\n'
+                   '2.Вычитание\n'
+                   '3.Умножение\n'
+                   '4.Деление\n'
+                   'Введите номер пункта меню >>> ')
 
-        assert choice.isdigit() and \
-               choice in ('1', '2', '3', '4'), 'Неверный ввод'
+    assert choice.isdigit() and \
+           choice in ('1', '2', '3', '4'), 'Неверный ввод'
 
-        f = input('Введите первое число >>> ')
-        assert f.isdigit() or int(f), 'Неверный ввод'
+    f = input('Введите первое число >>> ')
+    assert f.isdigit() or int(f), 'Неверный ввод'
 
-        s = input('Введите второе число >>> ')
-        assert s.isdigit() or int(s), 'Неверный ввод'
+    s = input('Введите второе число >>> ')
+    assert s.isdigit() or int(s), 'Неверный ввод'
 
-        match choice:
-            case '1':
-                print('Сумма: ', summa(*convert(f, s)))
-            case '2':
-                print('Разность: ', diff(*convert(f, s)))
-            case '3':
-                print('Произведение: ', multiply(*convert(f, s)))
-            case '4':
-                print('Частное: {} '
-                      'Остаток: {}'.format(*division(*convert(f, s))))
-    except AssertionError:
-        pass
+    match choice:
+        case '1':
+            print('Сумма: ', summa(*convert(f, s)))
+        case '2':
+            print('Разность: ', diff(*convert(f, s)))
+        case '3':
+            print('Произведение: ', multiply(*convert(f, s)))
+        case '4':
+            print('Частное: {} '
+                  'Остаток: {}'.format(*division(*convert(f, s))))
