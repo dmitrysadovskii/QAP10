@@ -12,12 +12,12 @@ def cesar_coding(in_str: str, bias: int, lang='eng') -> str:
     for i in in_str:
         if i.isupper():
             out_string += \
-                chr((ord(i) - ord(upper_letter) + bias) % amount_letter
-                    + ord(upper_letter))
+                chr((ord(i) - ord(upper_letter) + bias) % amount_letter +
+                    ord(upper_letter))
         elif i.islower():
             out_string += \
-                chr((ord(i) - ord(lower_letter) + bias) % amount_letter
-                    + ord(lower_letter))
+                chr((ord(i) - ord(lower_letter) + bias) % amount_letter +
+                    ord(lower_letter))
         elif i.isdigit():
             out_string += str((int(i) + bias) % 10)
         else:
@@ -43,12 +43,12 @@ def cesar_decoding(in_str: str, bias: int, lang='eng') -> str:
     for i in in_str:
         if i.isupper():
             out_string += \
-                chr((ord(i) - ord(upper_letter) - bias) % amount_letter
-                    + ord(upper_letter))
+                chr((ord(i) - ord(upper_letter) - bias) % amount_letter +
+                    ord(upper_letter))
         elif i.islower():
             out_string += \
-                chr((ord(i) - ord(lower_letter) - bias) % amount_letter
-                    + ord(lower_letter))
+                chr((ord(i) - ord(lower_letter) - bias) % amount_letter +
+                    ord(lower_letter))
         elif i.isdigit():
             out_string += str((int(i) - bias) % 10)
         else:
@@ -83,12 +83,12 @@ class CesarCodeDecode:
         for i in self.str_in:
             if i.isupper():
                 out_string += \
-                    chr((ord(i) - ord(upper) + self.bias) % amount
-                        + ord(upper))
+                    chr((ord(i) - ord(upper) + self.bias) % amount +
+                        ord(upper))
             elif i.islower():
                 out_string += \
-                    chr((ord(i) - ord(lower) + self.bias) % amount
-                        + ord(lower))
+                    chr((ord(i) - ord(lower) + self.bias) % amount +
+                        ord(lower))
             elif i.isdigit():
                 out_string += str((int(i) + self.bias) % 10)
             else:
