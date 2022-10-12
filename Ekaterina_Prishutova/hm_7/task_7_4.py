@@ -13,41 +13,47 @@ def caesar_wrapper(input_string, num, mode, language):
 
 def caesar(input_string, num, language):
     if language == "en":
-        abc = "".join([chr(letter) for letter in range(ord("a"), ord("z") + 1)] +
-                      [chr(letter) for letter in range(ord("A"), ord("Z") + 1)])
+        lower_upper_letters = ("".join([chr(letter) for letter in range(ord("a"), ord("z") + 1)] +
+                                       [chr(letter) for letter in range(ord("A"), ord("Z") + 1)]))
     elif language == "ru":
-        abc = "".join([chr(letter) for letter in range(ord("а"), ord("е") + 1)]) + chr(ord("ё")) + \
-              "".join([chr(letter) for letter in range(ord("ж"), ord("я") + 1)]) + \
-              "".join([chr(letter) for letter in range(ord("А"), ord("Е") + 1)]) + chr(ord("Ё")) + \
-              "".join([chr(letter) for letter in range(ord("Ж"), ord("Я") + 1)])
+        lower_upper_letters = ("".join([chr(letter) for letter in range(ord("а"), ord("е") + 1)]) + chr(ord("ё")) +
+                               "".join([chr(letter) for letter in range(ord("ж"), ord("я") + 1)]) +
+                               "".join([chr(letter) for letter in range(ord("А"), ord("Е") + 1)]) + chr(ord("Ё")) +
+                               "".join([chr(letter) for letter in range(ord("Ж"), ord("Я") + 1)]))
     else:
         print("Неподдерживаемый язык")
         return
-    return "".join([abc[(abc.index(el) + num % len(abc)) % len(abc)]
-                    if abc.find(el) >= 0 else el for el in input_string])
+    return "".join([lower_upper_letters[
+                        (lower_upper_letters.index(el) + num % len(lower_upper_letters)) % len(lower_upper_letters)]
+                    if lower_upper_letters.find(el) >= 0 else el for el in input_string])
 
 
 def kati_encode(input_string, mode, language):
     if language == "en":
-        abc = "".join([chr(letter) for letter in range(ord("a"), ord("z") + 1)]
-                      + [chr(letter) for letter in range(ord("A"), ord("Z") + 1)])
+        lower_upper_letters = ("".join([chr(letter) for letter in range(ord("a"), ord("z") + 1)] +
+                                       [chr(letter) for letter in range(ord("A"), ord("Z") + 1)]))
     elif language == "ru":
-        abc = "".join([chr(letter) for letter in range(ord("а"), ord("е") + 1)]) + chr(ord("ё")) + \
-              "".join([chr(letter) for letter in range(ord("ж"), ord("я") + 1)]) + \
-              "".join([chr(letter) for letter in range(ord("А"), ord("Е") + 1)]) + chr(ord("Ё")) + \
-              "".join([chr(letter) for letter in range(ord("Ж"), ord("Я") + 1)])
+        lower_upper_letters = ("".join([chr(letter) for letter in range(ord("а"), ord("е") + 1)]) + chr(ord("ё")) +
+                               "".join([chr(letter) for letter in range(ord("ж"), ord("я") + 1)]) +
+                               "".join([chr(letter) for letter in range(ord("А"), ord("Е") + 1)]) + chr(ord("Ё")) +
+                               "".join([chr(letter) for letter in range(ord("Ж"), ord("Я") + 1)]))
     else:
         print("Неподдерживаемый язык")
         return
     if mode == "encode":
-        num = (len(input_string) % len(abc) + int(len(abc) / 4)) % len(abc)
-        return "".join([abc[(abc.index(el) + num % len(abc)) % len(abc)] + chr(random.randrange(ord("a"), ord("z") + 1))
-                        if abc.find(el) >= 0 else el + chr(random.randrange(ord("a"), ord("z") + 1))
+        num = (len(input_string) % len(lower_upper_letters) + int(len(lower_upper_letters) / 4)) % len(
+            lower_upper_letters)
+        return "".join([lower_upper_letters[((lower_upper_letters.index(el) +
+                                              num % len(lower_upper_letters)) % len(lower_upper_letters))] +
+                        chr(random.randrange(ord("a"), ord("z") + 1))
+                        if lower_upper_letters.find(el) >= 0 else el + chr(random.randrange(ord("a"), ord("z") + 1))
                         for el in input_string[::-1]])
     elif mode == "decode":
-        num = -(int(len(input_string) / 2) % len(abc) + int(len(abc) / 4)) % len(abc)
-        return "".join([abc[(abc.index(el) + num % len(abc)) % len(abc)]
-                        if abc.find(el) >= 0 else el
+        num = -(int(len(input_string) / 2) % len(lower_upper_letters) + int(len(lower_upper_letters) / 4)) % len(
+            lower_upper_letters)
+        return "".join([lower_upper_letters[
+                            (lower_upper_letters.index(el) + num % len(lower_upper_letters)) % len(lower_upper_letters)]
+                        if lower_upper_letters.find(el) >= 0 else el
                         for el in input_string[-2::-2]])
     else:
         print("Некорректно выбран режим кодирования")
