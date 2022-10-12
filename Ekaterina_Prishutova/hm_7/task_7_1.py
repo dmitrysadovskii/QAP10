@@ -1,23 +1,14 @@
 def func_var_1(input_list, length, width):
-    if len(input_list) is not length * width:
-        print("Неверно заданы размеры")
-        return None
-    else:
-        return_matrix = []
-        for inc in range(width):
-            return_matrix.append([])
-        for value in enumerate(input_list):
-            return_matrix[int(value[0] / length)].append(value[1])
-        return return_matrix
+    assert len(input_list) is length * width, "Неверно заданы размеры"
+    list_1 = [[] for i in range(width)]
+    [list_1[int(value[0] / length)].append(value[1]) for value in enumerate(input_list)]
+    return list_1
 
 
 def func_var_2(input_list, length, width):
-    if len(input_list) is not length * width:
-        print("Неверно заданы размеры")
-        return None
-    else:
-        return [input_list[i:i + length] for i in range(0, len(input_list), length)]
+    assert len(input_list) is length * width, "Неверно заданы размеры"
+    return [input_list[i:i + length] for i in range(0, len(input_list), length)]
 
 
-print(func_var_1([1, 2, 3, 4, 5, 6], 2, 3))
+print(func_var_1([1, 2, 3, 4, 5, 6], 3, 2))
 print(func_var_2([1, 2, 3, 4, 5, 6], 2, 3))
