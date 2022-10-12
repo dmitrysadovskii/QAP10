@@ -1,9 +1,19 @@
 def is_number(str_1):
-    try:
-        float(str_1)
-        return True
-    except ValueError:
-        return False
+    count_dots = 0
+    for i in range(len(str_1)):
+        if i == 0 and not (str_1[i] == "-" or str_1[i].isdigit()):
+            print("1")
+            return False
+        elif str_1[i] == "." and i != 0:
+            print("2")
+            count_dots += 1
+            if count_dots > 1:
+                return False
+        elif i != 0 and not str_1[i].isdigit():
+            print("3")
+            print(str_1[i])
+            return False
+    return True
 
 
 def calc(val_1, val_2, oper):
