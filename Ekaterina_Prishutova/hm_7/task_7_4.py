@@ -13,7 +13,7 @@ def caesar_wrapper(input_string, num, mode, language):
 
 def caesar(input_string, num, language):
     if language == "en":
-        lower_upper_letters = ("".join([chr(letter) for letter in range(ord("a"), ord("z") + 1)] +
+        lower_upper_letters = "".join(([chr(letter) for letter in range(ord("a"), ord("z") + 1)] +
                                        [chr(letter) for letter in range(ord("A"), ord("Z") + 1)]))
     elif language == "ru":
         lower_upper_letters = ("".join([chr(letter) for letter in range(ord("а"), ord("е") + 1)]) + chr(ord("ё")) +
