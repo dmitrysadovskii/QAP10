@@ -11,9 +11,11 @@ def cesar_coding(in_str: str, bias: int, lang='eng') -> str:
 
     for i in in_str:
         if i.isupper():
-            out_string += chr(((ord(i) - ord(upper_letter) + bias) % amount_letter).__add__(ord(upper_letter)))
+            out_string += chr(((ord(i) - ord(upper_letter) +
+                                bias) % amount_letter).__add__(ord(upper_letter)))
         elif i.islower():
-            out_string += chr(((ord(i) - ord(lower_letter) + bias) % amount_letter).__add__(ord(lower_letter)))
+            out_string += chr(((ord(i) - ord(lower_letter) +
+                                bias) % amount_letter).__add__(ord(lower_letter)))
         elif i.isdigit():
             out_string += str((int(i) + bias) % 10)
         else:
@@ -38,9 +40,11 @@ def cesar_decoding(in_str: str, bias: int, lang='eng') -> str:
 
     for i in in_str:
         if i.isupper():
-            out_string += chr(((ord(i) - ord(upper_letter) - bias) % amount_letter).__add__(ord(upper_letter)))
+            out_string += chr(((ord(i) - ord(upper_letter) -
+                                bias) % amount_letter).__add__(ord(upper_letter)))
         elif i.islower():
-            out_string += chr(((ord(i) - ord(lower_letter) - bias) % amount_letter).__add__(ord(lower_letter)))
+            out_string += chr(((ord(i) - ord(lower_letter) -
+                                bias) % amount_letter).__add__(ord(lower_letter)))
         elif i.isdigit():
             out_string += str((int(i) - bias) % 10)
         else:
