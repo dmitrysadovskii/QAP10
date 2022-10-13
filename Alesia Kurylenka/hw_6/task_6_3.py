@@ -1,35 +1,23 @@
-user_input = input("Please choose the program and enter: \nfor Addition - add, \n"
-                   "for Subtraction - sub, \nfor Multiplication - mul, \nfor Division - div: ")
-
-
 def calculation():
+    user_input = input("Please choose the program and enter: \nfor Addition - add, \n"
+                       "for Subtraction - sub, \nfor Multiplication - mul, \nfor Division - div: ")
+    assert user_input in ["add", 'sub', 'mul', 'div'], "Enter valid operation"
     number1 = input("Please enter first number: ")
     number2 = input("Please enter second number: ")
-    if number1.isdigit() and number2.isdigit():
-        a = float(number1)
-        b = float(number2)
-        if user_input == "add":
-            print(a + b)
-        elif user_input == "sub":
-            print(a - b)
-        elif user_input == "mul":
-            print(a * b)
-        elif user_input == "div":
-            if b == 0:
-                print("division by 0 is not allowed")
-            else:
-                int_part = int(a // b)
-                remainder = int(a % b)
-                print(f"integer part of number: {int_part}, remainder of division: {remainder}")
-    else:
-        print("please enter digits only")
+    assert number1.isdigit() and number2.isdigit(), "please enter digits only"
+    number1 = float(number1)
+    number2 = float(number2)
+    if user_input == "add":
+        print(number1 + number2)
+    elif user_input == "sub":
+        print(number1 - number2)
+    elif user_input == "mul":
+        print(number1 * number2)
+    elif user_input == "div":
+        assert number2 != 0, "division by 0 is not allowed"
+        int_part = int(number1 // number2)
+        remainder = int(number1 % number2)
+        print(f"integer part of number: {int_part}, remainder of division: {remainder}")
 
 
-def program_input():
-    if user_input not in ["add", 'sub', 'mul', 'div']:
-        print("Enter valid operation")
-    else:
-        calculation()
-
-
-program_input()
+calculation()
