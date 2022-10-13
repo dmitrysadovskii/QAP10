@@ -15,7 +15,7 @@ def menu_choosing():
 def first_number_choosing():
     while True:
         first_number = input('Введите первое число: ')
-        if first_number.isupper() or first_number.islower():
+        if not first_number.isdigit():
             print('Буквы вводить не надо')
         else:
             return int(first_number)
@@ -24,7 +24,7 @@ def first_number_choosing():
 def second_number_choosing():
     while True:
         second_number = input('Введите второе число: ')
-        if second_number.isupper() or second_number.islower():
+        if not second_number.isdigit():
             print('Буквы вводить не надо')
         elif second_number == '0' and operation == '4':
             print('На ноль делить не будем')
@@ -47,7 +47,6 @@ elif operation == '3':
     multiplication_items = reduce(lambda x, y: x * y, items)
     print(multiplication_items)
 else:
-    # division_items = reduce(lambda x, y: x / y, items)
     division_items_quotient = reduce(lambda x, y: x // y, items)
     division_items_euclidean = reduce(lambda x, y: x % y, items)
     print(f'Частное: {division_items_quotient}, Остаток: {division_items_euclidean}')
