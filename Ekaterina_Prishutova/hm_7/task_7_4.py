@@ -12,8 +12,8 @@ def caesar_wrapper(input_string, num, mode, language):
 def create_lower_upper_letters(language):
     assert language in ["en", "ru"], "Неподдерживаемый язык"
     if language == "en":
-        return "".join(([chr(letter) for letter in range(ord("a"), ord("z") + 1)] +
-                        [chr(letter) for letter in range(ord("A"), ord("Z") + 1)]))
+        return "".join(([chr(letter) for letter in range(ord("a"), ord("z") + 1)]
+                        + [chr(letter) for letter in range(ord("A"), ord("Z") + 1)]))
     elif language == "ru":
         return ("".join([chr(letter) for letter in range(ord("а"), ord("е") + 1)]) + chr(ord("ё")) +
                 "".join([chr(letter) for letter in range(ord("ж"), ord("я") + 1)]) +
