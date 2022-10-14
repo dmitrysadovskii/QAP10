@@ -2,7 +2,7 @@ import operator
 
 
 def input_number():
-    return float(input("Введите число:"))
+    return float(input("Введите число:\n"))
 
 
 def select_operation():
@@ -42,7 +42,8 @@ def calculate():
             continue
         if "/" in math_expression:
             index_of_operation = math_expression.index("/")
-            result = math_expression[index_of_operation - 1] * math_expression[index_of_operation + 1]
+            assert math_expression[index_of_operation + 1] != 0, 'Divisor cannot be zero'
+            result = math_expression[index_of_operation - 1] / math_expression[index_of_operation + 1]
             replace_with_intermediate_result(math_expression, index_of_operation, result)
             continue
         if "+" in math_expression:
