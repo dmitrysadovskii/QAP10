@@ -7,7 +7,7 @@ def sort_numbers(func):
         if len(args) < 100:
             for num in args:
                 if 0 < num < 19:
-                    d[num] = num2words(num, to='ordinal')
+                    d[num] = num2words(num)
                 else:
                     print("The entered number should be greater than 0 and less than 19")
         else:
@@ -22,4 +22,4 @@ def print_sort_numbers(*args):
     print(args)
 
 
-print_sort_numbers(0, 5, 11, 4, 1)
+print_sort_numbers(0, 5, 11, 4, 1, 2, 3)
