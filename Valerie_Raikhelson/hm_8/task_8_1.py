@@ -2,15 +2,19 @@ def typed(type):
     def decorator(func):
         def wrapper(*args):
             if type == 'str':
-                func(''.join(map(str, args)))
-            if type == 'int':
-                func(sum(map(int, args)))
-            if type == 'float':
-                func(sum(map(float, args)))
+                func(''.join(convert_args(str, args)))
+            elif type == 'int':
+                func(sum(convert_args(int, args)))
+            elif type == 'float':
+                func(sum(convert_args(float, args)))
 
         return wrapper
 
     return decorator
+
+
+def convert_args(type, args):
+    return map(type, args)
 
 
 @typed(type='str')
