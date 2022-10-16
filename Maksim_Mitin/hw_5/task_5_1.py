@@ -1,11 +1,11 @@
 import langid
 
-string = input("Enter user names (Введите имена пользователей) \n").split(", ")
+string = input("Enter user names (Введите имена пользователей ) \n").split(", ")
 
 
 def likes(some_string):
     if len(some_string) == 0:
-        print("No one likes this")
+        print("No one likes this ")
     elif langid.classify(some_string[0])[0] == "en":
         if len(some_string) == 1:
             print(f"{str(some_string[0])} likes this")
