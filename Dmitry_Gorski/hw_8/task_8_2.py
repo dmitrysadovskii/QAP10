@@ -9,12 +9,9 @@ def sorted_tool(func):
             if all(0 <= arg < 20 for arg in args):
                 if len(args) <= 100:
                     return func(*args)
-                else:
-                    return 'The total number of args must not gt 100'
-            else:
-                return 'All args must be in range [0; 20)'
-        else:
-            return 'All args must be int'
+                return 'The total number of args must not gt 100'
+            return 'All args must be in range [0; 20)'
+        return 'All args must be int'
     return wrapper
 
 
