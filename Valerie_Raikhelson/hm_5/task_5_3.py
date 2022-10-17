@@ -25,9 +25,9 @@ print(list_hid_num)
 print(list_ran_num)
 
 for i in list_hid_num:
-    for l in list_ran_num:
-        if i == l:
-            if list_hid_num.index(i) == list_ran_num.index(l):
+    for k in list_ran_num:
+        if i == k:
+            if list_hid_num.index(i) == list_ran_num.index(k):
                 print(i, "бык")
             else:
                 print(i, "корова")
