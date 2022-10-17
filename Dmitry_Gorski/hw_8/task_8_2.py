@@ -1,6 +1,6 @@
-numbers = [x for x in range(20)]
-number_names = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten',
-                'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen']
+num_dict = {0: 'zero', 1: 'one', 2: 'two', 3: 'three', 4: 'four', 5: 'five', 6: 'six', 7: 'seven', 8: 'eight',
+            9: 'nine', 10: 'ten', 11: 'eleven', 12: 'twelve', 13: 'thirteen', 14: 'fourteen', 15: 'fifteen',
+            16: 'sixteen', 17: 'seventeen', 18: 'eighteen', 19: 'nineteen'}
 
 
 def check_args(*args):
@@ -11,7 +11,8 @@ def check_args(*args):
 
 def lexicographic_sort(*args):
     check_args(args)
-    return ', '.join(set(sorted([dict(zip(numbers, number_names)).get(arg) for arg in args])))
+    return list(dict(sorted([(v, k) for k, v in
+                             {k: v for k, v in num_dict.items() for arg in args if arg == k}.items()])).values())
 
 
 print(lexicographic_sort(1, 2, 3))
