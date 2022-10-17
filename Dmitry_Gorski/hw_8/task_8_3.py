@@ -56,9 +56,7 @@ if __name__ == "__main__":
 
     if choice == '5':
         p = input('Введите математическое выражение >>> ')
-        match choice:
-            case '5':
-                print('Результат: ', random_count(p))
+        print('Результат: ', random_count(p))
     else:
         f, s = input('Введите первое число >>> '), input('Введите второе число >>> ')
         match choice:
