@@ -1,6 +1,6 @@
 class Investment:
 
-    INVESTMENT_PERCENT = 10
+    INVESTMENT_PERCENT = .1
 
     def __init__(self, summa: float, period: int):
         self.summa = summa
@@ -13,7 +13,7 @@ class Bank:
     def deposit_info(n, r):
         invest.summa = n
         for i in range(1, r * 12 + 1):
-            n = n + (n * Investment.INVESTMENT_PERCENT / 1200)
+            n = n + (n * Investment.INVESTMENT_PERCENT / 12)
         return n - invest.summa
 
 
