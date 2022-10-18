@@ -10,13 +10,13 @@ class Investment:
 class Bank:
 
     @staticmethod
-    def deposit_info():
-        start_invest_summa = invest.summa
-        for i in range(1, invest.period * 12 + 1):
-            invest.summa = invest.summa + (invest.summa * Investment.INVESTMENT_PERCENT / 1200)
-        return invest.summa - start_invest_summa
+    def deposit_info(n, r):
+        invest.summa = n
+        for i in range(1, r * 12 + 1):
+            n = n + (n * Investment.INVESTMENT_PERCENT / 1200)
+        return n - invest.summa
 
 
 invest = Investment(10000, 1)
 wallet = Bank
-print(f'Total profit: {wallet.deposit_info()}')
+print(f'Total profit: {wallet.deposit_info(invest.summa, invest.period)}')
