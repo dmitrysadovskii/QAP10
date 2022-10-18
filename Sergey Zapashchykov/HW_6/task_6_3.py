@@ -1,8 +1,6 @@
 def calculate(number_1, number_2, operator):
-    if not number_1.isdigit() or not number_2.isdigit():
-        return 'Enter number!'
-    if int(number_2) == 0 and operator == 'division':
-        return 'Division by zero!'
+    assert number_1.isdigit(), 'Enter number!'
+    assert number_2.isdigit(), 'Enter number!'
     if operator not in ['addition', 'subtraction', 'multiplication', 'division']:
         return 'Enter correct operation!'
     if operator == 'addition':
@@ -12,6 +10,7 @@ def calculate(number_1, number_2, operator):
     elif operator == 'multiplication':
         return int(number_1) * int(number_2)
     elif operator == 'division':
+        assert int(number_2) != 0, 'Division by zero!'
         return int(number_1) / int(number_2)
 
 
