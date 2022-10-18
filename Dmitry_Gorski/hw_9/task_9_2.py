@@ -1,6 +1,6 @@
 class Investment:
 
-    INVESTMENT_PERCENT = .1
+    INVESTMENT_PERCENT = 10
 
     def __init__(self, summa: float, period: int):
         self.summa = summa
