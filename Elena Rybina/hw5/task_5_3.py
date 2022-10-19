@@ -3,15 +3,13 @@ import random
 secret_number = str(random.randint(1000, 9999))
 print("Guess the number. It contains 4 digits.")
 
-
 while True:
-    cows=0
-    bulls=0
+    cows = 0
+    bulls = 0
 
     player_guess = input("Enter your guess: ")
 
-
-    if len(player_guess)!=4:
+    if len(player_guess) != 4:
         print('Incorrect input!')
         break
 
@@ -29,5 +27,5 @@ while True:
         print("Bulls: ", bulls)
         print("Cows: ", cows)
 
-        if bulls==4:
+        if bulls == 4:
             print('Yay, You Won!')
