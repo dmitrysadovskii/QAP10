@@ -10,7 +10,7 @@ while True:
     if not len(number_2):
         print('Error! You are not entered number. Enter four-digit number!')
 
-    elif int(number_2) == int(number_1):
+    elif number_2 == number_1:
         print('You won!')
         break
 
@@ -19,9 +19,6 @@ while True:
 
     elif len(set(number_2)) != len(number_1):
         print('Error! Your\'s number has repetitive digits')
-
-    elif abs(int(number_2)) == 0:
-        print('Error! Enter four-digit non-zero number!')
 
     else:
 
