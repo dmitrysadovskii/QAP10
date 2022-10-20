@@ -39,7 +39,7 @@ def cows_and_bulls(some_numbers):
                 else:
                     continue
 
-        print(f"Коров = {str(cow)}. Быков = {str(bull)}")
+        print(f"Коров = {str(cow)}. Быков = {str(bull)} ")
 
 
 cows_and_bulls(number)

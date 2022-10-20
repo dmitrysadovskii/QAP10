@@ -1,6 +1,6 @@
 import langid
 
-string = input("Enter user names (Введите имена пользователей ) \n").split(", ")
+string = input("Enter user names (Введите имена пользователей  ) \n").split(", ")
 
 
 def likes(some_string):
