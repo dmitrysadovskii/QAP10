@@ -5,7 +5,7 @@ print('Колличество лайков: ', a)
 
 if likes == 0:
     print("no one likes this.")
-elif type(likes) == str:
+elif a == 1:
     print(f" {likes} like this.")
 elif a == 2:
     print(" and ".join(likes), "like this.")
