@@ -18,7 +18,7 @@ def typed(type):
 
 @typed(type='str')
 def add_two_symbols(a, b):
-    return a + b
+    return a - b
 
 
 @typed(type='int')
