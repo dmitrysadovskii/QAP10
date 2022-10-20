@@ -22,18 +22,18 @@ while True:
 
     else:
 
-        for i in list(str(number_1)):
-            for i2 in list(str(number_2)):
+        for i in list(number_1):
+            for i2 in list(number_2):
                 if i == i2:
                     cows += 1
 
-        if str(number_1)[0] == str(number_2)[0]:
+        if number_1[0] == number_2[0]:
             bulls += 1
-        if str(number_1)[1] == str(number_2)[1]:
+        if number_1[1] == number_2[1]:
             bulls += 1
-        if str(number_1)[2] == str(number_2)[2]:
+        if number_1[2] == number_2[2]:
             bulls += 1
-        if str(number_1)[3] == str(number_2)[3]:
+        if number_1[3] == number_2[3]:
             bulls += 1
 
         print("cows: ", cows)
