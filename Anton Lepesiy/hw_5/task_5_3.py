@@ -4,14 +4,17 @@ print('HELP: the secret number is: ', number_1)
 cows = 0
 bulls = 0
 while True:
-    number_2 = input('Please enter four-digit number with non-repetitive digits: ', )  # try to guess
+    number_2 = input('Please enter four-digit number with non-repetitive digits: ')  # try to guess
     print('yor\'s number: ', number_2)
     if int(number_2) == int(number_1):
         print('You won!')
         break
 
     elif len(number_2) != 4:
-        print('Error! Your\'s number is tot four-digit. Enter four-digit number!')
+        print('Error! Your\'s number is not four-digit. Enter four-digit number!')
+
+    elif len(set(number_2)) != len(number_1):
+        print('Error! Your\'s number has repetitive digits')
 
     elif abs(int(number_2)) == 0:
         print('Error! Enter four-digit non-zero number!')
@@ -38,3 +41,5 @@ while True:
 
         print("cows: ", cows)
         print("bulls: ", bulls)
+        bulls = 0
+        cows = 0
