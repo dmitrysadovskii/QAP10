@@ -1,7 +1,4 @@
 likes = ("Ann", "Alex", "Mark", "Max")
-# likes = "Ann"
-# likes = ("Ann", "Alex")
-# likes = ("Ann", "Alex", "Mark")
 a = len(likes)
 
 print('Колличество лайков: ', a)
