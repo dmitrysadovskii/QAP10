@@ -6,7 +6,11 @@ bulls = 0
 while True:
     number_2 = input('Please enter four-digit number with non-repetitive digits: ')  # try to guess
     print('yor\'s number: ', number_2)
-    if int(number_2) == int(number_1):
+
+    if not len(number_2):
+        print('Error! You are not entered number. Enter four-digit number!')
+
+    elif int(number_2) == int(number_1):
         print('You won!')
         break
 
@@ -18,10 +22,6 @@ while True:
 
     elif abs(int(number_2)) == 0:
         print('Error! Enter four-digit non-zero number!')
-
-    # elif number_2 == '':
-    #   print('Error! Enter four-digit number!')
-    # не удалось задать условие возврата к началу при вводе пустого значения!
 
     else:
 
