@@ -1,9 +1,16 @@
-from collections import OrderedDict
-
-
 class Flowers:
 
-    def __init__(self, name, freshness, color, stem_length, price, life_time):
+    def __init__(self, name: str, freshness: (int, float), color: str, stem_length: (int, float),
+                 price: (int, float), life_time: (int, float)):
+        """
+        Args:
+            name: flower name
+            freshness: freshness (hour)
+            color: flower color
+            stem_length: flower stem_length (sm)
+            price: price (у.е)
+            life_time: flower life time (hour)
+        """
         self.name = name
         self.freshness = freshness
         self.color = color
@@ -15,29 +22,63 @@ class Flowers:
 class Bouquet:
 
     def __init__(self):
-        self.flowers = list()
-        self.total_price = list()
-        self.bouquet_life_time = list()
+        self.flowers, self.total_price = list(), list()
+        self.bouquet_life_time, self.bouquet_freshness_time = list(), list()
 
-    def add_to_bouquet(self, flowers):
-        for flower in flowers:
+    def add_to_bouquet(self, *args):
+
+        for flower in args:
+            assert flower.freshness < flower.life_time, f'The flower {flower.name} is not fresh \
+            and cannot be added to the bouquet'
+            assert flower.stem_length > 0, 'The positive length of the flower stem must be specified'
+            assert flower.price >= 0, 'The cost of the flower must be within [0, ...)'
             self.flowers.append(flower)
+            self.bouquet_freshness_time.append(flower.freshness)
             self.total_price.append(flower.price)
             self.bouquet_life_time.append(flower.life_time)
 
+    @property
     def get_bouquet_price(self):
-        return sum(self.total_price)
+        return f'Cost of the bouquet : {sum(self.total_price)} у.е'
 
+    @property
     def get_bouquet_life_time(self):
-        return sum(self.bouquet_life_time) / len(self.bouquet_life_time)
+        life_time = []
+        for idx, val in enumerate(self.bouquet_life_time):
+            life_time.append(val - self.bouquet_freshness_time[idx])
+        return f'Bouquet life time : {round(sum(life_time) / len(life_time), 2)} hour'
 
-    def check_if_exist(self, flower):
-        return True if flower.name in self.flowers else False
+    def check_if_exist(self, flower_name):
+        for flower in self.flowers:
+            if flower_name == flower.name:
+                return 'Flower in a bouquet'
+            return 'Flower not in a bouquet'
 
     def find_in_bouquet_by_param(self, **kwargs):
         for flower in self.flowers:
             if all([getattr(flower, k) == v for k, v in kwargs.items()]):
-                return getattr(flower, 'name')
+                return f'found this flower in a bouquet : {getattr(flower, "name")}'
+            return 'Flower not in a bouquet'
 
     def sort_bouquet_by_param(self, param):
-        return OrderedDict(sorted({getattr(flower, param): flower.name for flower in self.flowers}.items())).values()
+        from collections import OrderedDict
+        for flower in self.flowers:
+            if hasattr(flower, param):
+                return OrderedDict(sorted({getattr(flower, param): flower.name for flower in self.flowers}.items()))
+
+
+flower_1 = Flowers('Роза', 2, 'Красный', 120, 10, 7)
+flower_2 = Flowers('Тюльпан', 1, 'Красный', 35, 2, 5)
+flower_3 = Flowers('Ромашка', 3, 'Белый', 15, .3, 4)
+
+bouquet = Bouquet()
+bouquet.add_to_bouquet(flower_1, flower_2, flower_3)
+
+print(bouquet.get_bouquet_price)
+print(bouquet.get_bouquet_life_time)
+print(bouquet.check_if_exist('Лютик'))
+print(bouquet.check_if_exist('Роза'))
+print(bouquet.find_in_bouquet_by_param(stem_length=120, color='Красный'))
+print(bouquet.find_in_bouquet_by_param(stem_length=120, color='Красный', name='Лютик'))
+print(bouquet.sort_bouquet_by_param('price'))
+
