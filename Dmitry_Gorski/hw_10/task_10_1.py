@@ -51,14 +51,14 @@ class Bouquet:
     def check_if_exist(self, flower_name):
         for flower in self.flowers:
             if flower_name == flower.name:
-                return 'Flower in a bouquet'
-            return 'Flower not in a bouquet'
+                return f'{flower_name} in a bouquet'
+            return f'{flower_name} not in a bouquet'
 
     def find_in_bouquet_by_param(self, **kwargs):
         for flower in self.flowers:
             if all([getattr(flower, k) == v for k, v in kwargs.items()]):
-                return f'found this flower in a bouquet : {getattr(flower, "name")}'
-            return 'Flower not in a bouquet'
+                return f'Found this flower in a bouquet : {getattr(flower, "name")}'
+            return 'Flower with installed params not in a bouquet'
 
     def sort_bouquet_by_param(self, param):
         from collections import OrderedDict
@@ -67,17 +67,17 @@ class Bouquet:
                 return OrderedDict(sorted({getattr(flower, param): flower.name for flower in self.flowers}.items()))
 
 
-flower_1 = Flowers('Роза', 2, 'Красный', 120, 10, 7)
-flower_2 = Flowers('Тюльпан', 1, 'Красный', 35, 2, 5)
-flower_3 = Flowers('Ромашка', 3, 'Белый', 15, .3, 4)
+flower_1 = Flowers('Rose', 2, 'Red', 120, 10, 7)
+flower_2 = Flowers('Tulip', 1, 'Yellow', 35, 2, 5)
+flower_3 = Flowers('Chamomile', 3, 'White', 15, .3, 4)
 
 bouquet = Bouquet()
 bouquet.add_to_bouquet(flower_1, flower_2, flower_3)
 
 print(bouquet.get_bouquet_price)
 print(bouquet.get_bouquet_life_time)
-print(bouquet.check_if_exist('Лютик'))
-print(bouquet.check_if_exist('Роза'))
-print(bouquet.find_in_bouquet_by_param(stem_length=120, color='Красный'))
-print(bouquet.find_in_bouquet_by_param(stem_length=120, color='Красный', name='Лютик'))
+print(bouquet.check_if_exist('Buttercup'))
+print(bouquet.check_if_exist('Rose'))
+print(bouquet.find_in_bouquet_by_param(stem_length=120, color='Red'))
+print(bouquet.find_in_bouquet_by_param(stem_length=120, color='Red', name='Buttercup'))
 print(bouquet.sort_bouquet_by_param('price'))
