@@ -81,4 +81,3 @@ print(bouquet.check_if_exist('Роза'))
 print(bouquet.find_in_bouquet_by_param(stem_length=120, color='Красный'))
 print(bouquet.find_in_bouquet_by_param(stem_length=120, color='Красный', name='Лютик'))
 print(bouquet.sort_bouquet_by_param('price'))
-
