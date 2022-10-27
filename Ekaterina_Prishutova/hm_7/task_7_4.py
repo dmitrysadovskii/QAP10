@@ -24,7 +24,7 @@ def create_lower_upper_letters(language):
 def caesar(input_string, num, language):
     lower_upper_letters = create_lower_upper_letters(language)
     return "".join([lower_upper_letters[
-                (lower_upper_letters.index(el) + num % len(lower_upper_letters)) % len(lower_upper_letters)]
+                    (lower_upper_letters.index(el) + num % len(lower_upper_letters)) % len(lower_upper_letters)]
                     if lower_upper_letters.find(el) >= 0 else el for el in input_string])
 
 
@@ -43,9 +43,10 @@ def kati_encode(input_string, mode, language):
         num = -(int(len(input_string) / 2) % len(lower_upper_letters) + int(len(lower_upper_letters) / 4)) % len(
             lower_upper_letters)
         return "".join([lower_upper_letters[
-                    (lower_upper_letters.index(el) + num % len(lower_upper_letters)) % len(lower_upper_letters)]
+                        (lower_upper_letters.index(el) + num % len(lower_upper_letters)) % len(lower_upper_letters)]
                         if lower_upper_letters.find(el) >= 0 else el
                         for el in input_string[-2::-2]])
+
 
 in_str_en = "th!is IS a teSt ]6stri()ng"
 in_str_ru = "Ехал Гpека чеpез pеку, видит Гpека – в pеке pак. Сунул Гpека pуку в pеку, pак за pуку Гpеку цап!"
