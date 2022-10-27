@@ -16,7 +16,7 @@ def add_two_symbols(a, b):
 
 @typed(type_input=int)
 def add_three_symbols(a, b, c):
-    return a + b + с
+    return a + b + c
 
 
 print(add_two_symbols(1, 2))
