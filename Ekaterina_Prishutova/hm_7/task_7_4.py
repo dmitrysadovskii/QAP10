@@ -29,7 +29,7 @@ def caesar(input_string, num, language):
 
 
 def kati_encode(input_string, mode, language):
-    assert mode in ["encode", "decode"], "Некорректно выбран режим кодирования"
+    assert mode in ["encode", "decode"], "Некорректно выбран режим кодирования!"
     lower_upper_letters = create_lower_upper_letters(language)
     if mode == "encode":
         num = (len(input_string) % len(lower_upper_letters) +
