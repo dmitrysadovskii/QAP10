@@ -3,19 +3,19 @@ from abc import ABC, abstractmethod
 
 class Methods(ABC):
     @abstractmethod
-    def addition(self, num_1, num_2):
+    def addition(self):
         raise NotImplemented
 
     @abstractmethod
-    def subtraction(self, num_1, num_2):
+    def subtraction(self):
         raise NotImplemented
 
     @abstractmethod
-    def multiplication(self, num_1, num_2):
+    def multiplication(self):
         raise NotImplemented
 
     @abstractmethod
-    def division(self, num_1, num_2):
+    def division(self):
         raise NotImplemented
 
 
