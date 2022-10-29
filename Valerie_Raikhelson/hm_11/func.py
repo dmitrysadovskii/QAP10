@@ -4,19 +4,19 @@ from abc import ABC, abstractmethod
 class Methods(ABC):
     @abstractmethod
     def addition(self):
-        raise NotImplemented
+        raise NotImplementedError
 
     @abstractmethod
     def subtraction(self):
-        raise NotImplemented
+        raise NotImplementedError
 
     @abstractmethod
     def multiplication(self):
-        raise NotImplemented
+        raise NotImplementedError
 
     @abstractmethod
     def division(self):
-        raise NotImplemented
+        raise NotImplementedError
 
 
 class Calculator(Methods):
