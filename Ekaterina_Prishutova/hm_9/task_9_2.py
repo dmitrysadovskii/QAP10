@@ -12,7 +12,7 @@ class Bank:
 
     @staticmethod
     def deposit(n, r, percent):
-        return n * (1 + percent/1200) ** r
+        return n * (1 + percent / 1200) ** r
 
 
 inv = Investment(350000, 9)
