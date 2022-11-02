@@ -23,7 +23,7 @@ class Bouquet:
 
     def __init__(self):
         self.flowers, self.total_price = list(), list()
-        self.bouquet_life_time, self.bouquet_freshness_time = list(), list()
+        self.bouquet_life_time_lst, self.bouquet_freshness_time = list(), list()
 
     def add_to_bouquet(self, *args):
 
@@ -35,24 +35,24 @@ class Bouquet:
             self.flowers.append(flower)
             self.bouquet_freshness_time.append(flower.freshness)
             self.total_price.append(flower.price)
-            self.bouquet_life_time.append(flower.life_time)
+            self.bouquet_life_time_lst.append(flower.life_time)
 
     @property
-    def get_bouquet_price(self):
+    def bouquet_price(self):
         return f'Cost of the bouquet : {sum(self.total_price)} у.е'
 
     @property
-    def get_bouquet_life_time(self):
+    def bouquet_life_time(self):
         life_time = []
-        for idx, val in enumerate(self.bouquet_life_time):
+        for idx, val in enumerate(self.bouquet_life_time_lst):
             life_time.append(val - self.bouquet_freshness_time[idx])
         return f'Bouquet life time : {round(sum(life_time) / len(life_time), 2)} hour'
 
     def check_if_exist(self, flower_name):
         for flower in self.flowers:
             if flower_name == flower.name:
-                return f'{flower_name} in a bouquet'
-            return f'{flower_name} not in a bouquet'
+                return True
+            return False
 
     def find_in_bouquet_by_param(self, **kwargs):
         for flower in self.flowers:
@@ -61,10 +61,9 @@ class Bouquet:
             return 'Flower with installed params not in a bouquet'
 
     def sort_bouquet_by_param(self, param):
-        from collections import OrderedDict
         for flower in self.flowers:
             if hasattr(flower, param):
-                return OrderedDict(sorted({getattr(flower, param): flower.name for flower in self.flowers}.items()))
+                return sorted((getattr(flower, param), flower.name) for flower in self.flowers)
 
 
 flower_1 = Flowers('Rose', 2, 'Red', 120, 10, 7)
@@ -74,8 +73,8 @@ flower_3 = Flowers('Chamomile', 3, 'White', 15, .3, 4)
 bouquet = Bouquet()
 bouquet.add_to_bouquet(flower_1, flower_2, flower_3)
 
-print(bouquet.get_bouquet_price)
-print(bouquet.get_bouquet_life_time)
+print(bouquet.bouquet_price)
+print(bouquet.bouquet_life_time)
 print(bouquet.check_if_exist('Buttercup'))
 print(bouquet.check_if_exist('Rose'))
 print(bouquet.find_in_bouquet_by_param(stem_length=120, color='Red'))
