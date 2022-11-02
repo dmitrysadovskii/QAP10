@@ -29,12 +29,15 @@ print(add_two_symbols('a', 'b'))
 
 print('typed func: add_three_symbols:')
 
+
 @typed_func(type='int')
 def add_three_symbols(a, b, c):
     return a + b + c
 
+
 print(add_three_symbols(5, 6, 7))
 print(add_three_symbols("3", 5, 0))
+
 
 @typed_func(type='float')
 def add_three_symbols(a, b, c):
