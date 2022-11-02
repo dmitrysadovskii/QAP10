@@ -42,4 +42,6 @@ print(add_three_symbols("3", 5, 0))
 @typed_func(type='float')
 def add_three_symbols(a, b, c):
     return a + b + c
+    
+    
 print(add_three_symbols(0.1, 0.2, 0.4))
