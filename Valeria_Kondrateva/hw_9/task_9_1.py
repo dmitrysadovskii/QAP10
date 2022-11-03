@@ -14,26 +14,19 @@ class User:
         self.book_list = []
 
     def take_book(self, book):
-        if book.reserved is False:
-            book.reserved = True
-            self.book_list.append(book)
-        elif book.reserved is True and book.name_res == self.name:
-            book.reserved = True
-            self.book_list.append(book)
-        else:
-            print('Книгу читает другой пользователь')
+        assert book.reserved is False, 'Книгу читает другой пользователь'
+        self.book_list.append(book)
+        book.reserved = True
 
     def back_book(self, book):
         if book in self.book_list:
             book.reserved = False
             self.book_list.remove(book)
 
-    def booking_book(self, book):
-        if book.reserved is True:
-            print('Книга уже зарезервирована')
-        else:
-            book.reserved = True
-            book.name_res = self.name
+    @staticmethod
+    def booking_book(book):
+        assert book.reserved is False, 'Книга уже зарезервирована'
+        book.reserved = True
 
 
 book_a = Book('war and peace', 'L.Tolstoy', 1300, 556589222)

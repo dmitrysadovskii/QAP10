@@ -6,8 +6,8 @@ class Investment:
 
 class Bank:
 
-    def __init__(self):
-        self.rate = 0.1
+    def __init__(self, rate=0.1):
+        self.rate = rate
 
     def deposit(self, summa, time):
         rate = self.rate
