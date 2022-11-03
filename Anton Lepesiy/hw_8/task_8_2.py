@@ -26,7 +26,6 @@ def lexografic_sorter(func):
 def numbers_ptinter(*args):
 
     print('lexografic sorted numbers:', *args)
-    print()
 
 
 numbers_ptinter(1, 2, 3)
