@@ -19,16 +19,13 @@ class User:
             book.reserve = True
 
     def take_book(self, book):
-        if book not in self.user_book and book.reserve is False:
-            self.user_book.append(book)
-        else:
-            print(f"{book} can't be taken.")
+        assert book not in self.user_book, f"{book} can't be taken."
+        assert book.reserve is False, f"{book} can't be taken."
+        self.user_book.append(book)
 
     def return_book(self, book):
-        if book in self.user_book:
-            self.user_book.remove(book)
-        else:
-            print(f"You didn't take {book}")
+        assert book in self.user_book, f"You didn't take {book}"
+        self.user_book.remove(book)
 
 
 book1 = Book('Hobbit', 'Tolkien', 314, '978-0-00-837-605-5')
