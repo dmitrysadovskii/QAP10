@@ -42,4 +42,3 @@ olesya.add_book(Book_two)
 olesya.remove_book(Book_three)
 olesya.add_book(Book_three)
 jenya.remove_book(Book_two)
-
