@@ -21,6 +21,13 @@ class Reader:
             book.reserved = True
             print(f'Книга "{book.title}" успешно выдана читателю {self.name}.')
 
+    def remove_book(self, book):
+        if book.reserved:
+            book.reserved = False
+            print(f'Книга "{book.title}" вернулась в библиотеку')
+        else:
+            print(f'Книга "{book.title}" вернуть нельзя, она и так свободна')
+
 
 Book_one = Book('Зов Ктулху', 'Говард Лавкрафт', 416, '978-5-17-099202-7', False)
 Book_two = Book('Некрономикон. Книга запретных тайн', 'Говард Лавкрафт', 416, '978-5-17-119689-9', False)
@@ -32,4 +39,7 @@ jenya.add_book(Book_two)
 olesya = Reader('Олеся')
 olesya.add_book(Book_one)
 olesya.add_book(Book_two)
+olesya.remove_book(Book_three)
 olesya.add_book(Book_three)
+jenya.remove_book(Book_two)
+
