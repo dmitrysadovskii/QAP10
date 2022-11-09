@@ -1,6 +1,7 @@
 test_false = 4561261212345464
 test_true = 4561261212345467
 
+
 def validate(card_num):
     card_list = list(map(int, str(card_num)))
 
@@ -16,10 +17,11 @@ def validate(card_num):
     list_output = []
     for digital, digital_alt in zip(card_list[start::2], card_list[start_alt::2]):
         digital *= 2
-        digital -= 9*(digital>9)  ## использование логический операторов True (1) и  False (0)
+        digital -= 9*(digital>9)
         list_output.append(digital)
         list_output.append(digital_alt)
     return (sum(list_output)+last_num) % 10 == 0
+
 
 print(validate(test_false))
 print(validate(test_true))

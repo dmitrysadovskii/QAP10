@@ -1,5 +1,6 @@
 from collections import Counter
 
+
 def letter_counter(letters):
     msg = Counter(letters)
 
@@ -11,6 +12,7 @@ def letter_counter(letters):
         result = result + str(msg[i])
 
     print(result)
+
 
 string_1 = input(': ')
 letter_counter(string_1)
