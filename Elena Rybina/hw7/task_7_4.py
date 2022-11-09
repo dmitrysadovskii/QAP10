@@ -1,5 +1,7 @@
 alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ'
 txt = input('Enter text to encrypt:  ').upper()
+
+
 def encode(txt_1):
     step = int(input('Enter step to encrypt:'))
     place = ' '
@@ -15,6 +17,7 @@ print(encode(txt))
 
 
 txt_decode = input('Enter encrypted text: ').upper()
+
 
 def decode(txt_1):
     step = int(input('Enter step to encrypt:'))
