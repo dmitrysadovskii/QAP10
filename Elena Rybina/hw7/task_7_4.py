@@ -31,4 +31,5 @@ def decode(txt_1):
             place += i
     return place
 
+
 print(decode(txt_decode))
