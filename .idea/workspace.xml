@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd758677-9cd0-4abb-a243-5dd253af2d1b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/elena.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/QAP10" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Elena Rybina/hw_6/task_6_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Elena Rybina/hw_6/task_6_1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Elena Rybina/hw_6/task_6_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Elena Rybina/hw_6/task_6_2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Elena Rybina/hw_6/task_6_3.py" beforeDir="false" afterPath="$PROJECT_DIR$/Elena Rybina/hw_6/task_6_3.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

@@ -17,10 +17,10 @@ def validate(card_num):
     list_output = []
     for digital, digital_alt in zip(card_list[start::2], card_list[start_alt::2]):
         digital *= 2
-        digital -= 9 * (digital> 9)
+        digital -= 9 * (digital > 9)
         list_output.append(digital)
         list_output.append(digital_alt)
-    return (sum(list_output)+last_num) % 10 == 0
+    return (sum(list_output) + last_num) % 10 == 0
 
 
 print(validate(test_false))
