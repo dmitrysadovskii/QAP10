@@ -1,6 +1,4 @@
 class Book:
-
-
     def __init__(self, book_name, author, pages, isbn, reserved):
         self.book_name = book_name
         self.author = author
@@ -21,7 +19,6 @@ class User:
             self.books.append(book)
             book.reserved = 1
             print(f'The book "{book.book_name}" was successfully picked up by {self.name}.')
-
 
     def remove_book(self, book):
         if book.reserved:
