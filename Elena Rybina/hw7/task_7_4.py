@@ -13,6 +13,8 @@ def encode(txt_1):
         else:
             place += i
     return place
+
+
 print(encode(txt))
 
 
