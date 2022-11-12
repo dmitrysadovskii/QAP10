@@ -25,6 +25,7 @@ def add_three_symbols(*args):
 def add_four_symbols(*args):
     print(args)
 
+
 add_two_symbols("3", "a")
 add_three_symbols(1, "2")
 add_four_symbols(0.1, 0.2, 0.4, 0.7)
