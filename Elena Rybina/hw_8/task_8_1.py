@@ -15,9 +15,11 @@ def typed(data_type):
 def add_two_symbols(*args):
     print(args)
 
+
 @typed(data_type='int')
 def add_three_symbols(*args):
     print(args)
+
 
 @typed(data_type='float')
 def add_four_symbols(*args):
