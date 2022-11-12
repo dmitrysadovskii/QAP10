@@ -8,7 +8,7 @@ class Flower():
 
     def __str__(self):
         return f'{self.kind: <10}{self.color: <10}{str(self.freshness) + " days": <15}\
-                "{str(self.length * 100) + "cm": <10}{str(self.price) + "$": <5}'""
+            "{str(self.length * 100) + "cm": <10}{str(self.price) + "$": <5}'""
 
 
 class Bouquet():
