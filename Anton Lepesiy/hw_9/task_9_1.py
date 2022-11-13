@@ -42,8 +42,8 @@ class User:
             print('Пользователь не резервировал такой книги')
 
 
-book_1 = Book("Сабакі Эўропы", "Альгерд Бахарэвіч", 676, 978-80-908687-2-4)
-book_2 = Book('Diuna', 'Frank Herbert', 777, 978-83-8188-138-8)
+book_1 = Book("Сабакі Эўропы", "Альгерд Бахарэвіч", 676, '978-80-908687-2-4')
+book_2 = Book('Diuna', 'Frank Herbert', 777, '978-83-8188-138-8')
 user_1 = User('Anton')
 user_2 = User('Krystsina')
 user_3 = User('Vlada')
