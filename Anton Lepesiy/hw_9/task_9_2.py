@@ -26,8 +26,3 @@ user_start_amount = user_investment.investment_amount
 user_investment_period = user_investment.investment_period
 
 bank.deposit(user_start_amount, user_investment_period)
-
-
-
-
-
