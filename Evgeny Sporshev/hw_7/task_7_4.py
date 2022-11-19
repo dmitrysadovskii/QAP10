@@ -8,8 +8,6 @@ def encode(some_string, step):
     result = ''
     for i in some_string:
         if i in alphabet:
-            pos = 0
-            new_pos = 0
             position = alphabet.find(i)
             new_pos = alphabet[position + step]
             result += new_pos
@@ -22,8 +20,6 @@ def decode(some_string, step):
     result = ''
     for i in some_string:
         if i in alphabet:
-            pos = 0
-            new_pos = 0
             position = alphabet.find(i)
             new_pos = alphabet[position - step]
             result += new_pos
